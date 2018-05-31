@@ -3,14 +3,14 @@
 from os.path import join, dirname
 from setuptools import setup
 
-PACKAGE_NAME = ''
-PACKAGE_PATH = ''
+PACKAGE_NAME = 'about_live_time'
+PACKAGE_PATH = 'about_live_time'
 
 version = __import__(PACKAGE_PATH).__version__
 
-SHORT_DESCRIPTION = ''''''
+SHORT_DESCRIPTION = '''time days about live'''
 
-LONG_DESCRIPTION = ''''''
+LONG_DESCRIPTION = SHORT_DESCRIPTION
 
 def long_description():
     """Return long description from README.md if it's present
