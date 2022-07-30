@@ -33,7 +33,7 @@
   <body>
     <div id="main" style="font-size:24px;width: 960px;padding-left:12px;padding-right:12px;margin-left: auto;margin-right: auto;margin-top:64px;"></div>
     <script type="text/javascript">
-        var text = "<p><strong>齐百慧</strong><p><br/>";
+        var text = "<p align='center'><strong>齐百慧</strong><p><br/>";
         var data = [
 	    ['相遇', '2018-01-29'],
 	    ['第一次深聊', '2018-05-11'],
@@ -47,6 +47,9 @@
 	    ['一起看话剧', '2018-10-06'],
 	    ['定亲', '2019-01-01'],
 	    ['领证', '2019-04-30'],
+	    ['搬入新家', '2020-05-11'],
+	    ['婚礼', '2021-01-18'],
+	    ['有一一', '2022-06-01'],
         ]
         var now = moment()
         data.forEach(function(val, index){
@@ -54,13 +57,26 @@
             text += ' <b>';
             text += val[0];
             text += '</b> 至今已经 <i>';
-            text += now.diff(moment(val[1]), 'days');
-            text += ' 天了</i></p>'
+            var days = now.diff(moment(val[1]), 'days');
+            if (days > 365){
+                var year = Math.trunc(days / 365);
+                var days = days % 365;
+                text += year;
+                text += ' 年 ';
+            } 
+            if (days > 8){
+                var weeks =  Math.trunc(days / 7);
+                var days = days % 7;
+                text += weeks;
+                text += ' 周 ';
+           }
+           text += days;
+           text += ' 天了</i></p>'
         });
-        text += '^2000<br/> <p>遇上你是我的幸运, 感谢上苍的安排 <p> ^500 <p><strong style="color:red">爱你</strong></p>'
+        text += '^2000<br/> <p>遇上你是我的幸运, 感谢上苍的安排 <p><br/> ^500 <p align="center"><strong style="color:red">爱你</strong></p>'
 	var options = {
 	  strings: [text],
-	  typeSpeed: 20
+	  typeSpeed: 35
 	}
         var typed = new Typed("#main", options);
     </script>
