@@ -4,6 +4,7 @@
     <title>about live time</title>
     <link rel="shortcut icon" href="http://cdn.reworkplan.com/avator.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/3.0.0/pure-min.css" integrity="sha512-X2yGIVwg8zeG8N4xfsidr9MqIfIE8Yz1It+w2rhUJMqxUwvbVqC5OPcyRlPKYOw/bsdJut91//NO9rSbQZIPRQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <meta name="keywords" content="reworkpaln, 齐百慧, 杨洋" />
     <script src="./typed.min.js" type="text/javascript"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
@@ -30,26 +31,44 @@
 	}
     </style>
   </head>
-  <body>
-    <div id="main" style="font-size:24px;width: 960px;padding-left:12px;padding-right:12px;margin-left: auto;margin-right: auto;margin-top:64px;"></div>
+  <body style="background:
+	linear-gradient(
+		limegreen,
+		transparent
+	),
+	linear-gradient(
+		90deg,
+		skyblue,
+		transparent
+	),
+	linear-gradient(
+		-90deg,
+		coral,
+		transparent
+	);
+	
+background-blend-mode: screen;">
+    <div id="main" style="color:#161823; font-size:24px;width: 960px;padding-left:12px;padding-right:12px;margin-left: auto;margin-right: auto;margin-top:64px;"></div>
     <script type="text/javascript">
+        moment.locale("zh-cn");
+
         var text = "<p align='center'><strong>齐百慧</strong><p><br/>";
         var data = [
-	    ['相遇', '2018-01-29'],
-	    ['第一次深聊', '2018-05-11'],
-	    ['确认情侣关系', '2018-05-20'],
-	    ['第一次去远方', '2018-06-02'],
-	    ['第一次给我过生日', '2018-06-22'],
-	    ['非正式吵架', '2018-06-30'],
-	    ['去你家见叔叔阿姨', '2018-09-16'],
-	    ['去五莲', '2018-10-01'],
-	    ['来我家看我妈妈', '2018-10-05'],
-	    ['一起看话剧', '2018-10-06'],
-	    ['定亲', '2019-01-01'],
-	    ['领证', '2019-04-30'],
-	    ['搬入新家', '2020-05-11'],
+	    ['天麒出生', '2023-03-03'],
+	    ['有天麒', '2022-05-27'],
 	    ['婚礼', '2021-01-18'],
-	    ['有一一', '2022-06-01'],
+	    ['搬入新家', '2020-05-11'],
+	    ['领证', '2019-04-30'],
+	    ['定亲', '2019-01-01'],
+	    ['一起看话剧', '2018-10-06'],
+	    ['来我家看我妈妈', '2018-10-05'],
+	    ['去五莲', '2018-10-01'],
+	    ['去你家见叔叔阿姨', '2018-09-16'],
+	    ['第一次给我过生日', '2018-06-22'],
+	    ['第一次去远方', '2018-06-02'],
+	    ['确认情侣关系', '2018-05-20'],
+	    ['第一次深聊', '2018-05-11'],
+	    ['相遇', '2018-01-29']
         ]
         var now = moment()
         data.forEach(function(val, index){
@@ -64,14 +83,22 @@
                 text += year;
                 text += ' 年 ';
             } 
+            if (days > 30){
+                var month =  Math.trunc(days / 30);
+                var days = days % 30;
+                text += month;
+                text += ' 个月 ';
+           }
+/*
             if (days > 8){
                 var weeks =  Math.trunc(days / 7);
                 var days = days % 7;
                 text += weeks;
-                text += ' 周 ';
+                text += ' 月 ';
            }
+*/
            text += days;
-           text += ' 天了</i></p>'
+           text += ' 天了</i></p>';
         });
         text += '^2000<br/> <p>遇上你是我的幸运, 感谢上苍的安排 <p><br/> ^500 <p align="center"><strong style="color:red">爱你</strong></p>'
 	var options = {
